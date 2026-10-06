@@ -1,1 +1,1 @@
-Frontend-Realizado-por José Orlando Zavala López//  
+Frontend-Realizado-por José Orlando Zavala López// Gabriel Alexander Hernandez Reyes
