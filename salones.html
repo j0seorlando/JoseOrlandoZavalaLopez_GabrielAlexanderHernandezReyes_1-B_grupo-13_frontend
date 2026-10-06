@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Salones | Eventos Prestige</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="hola">
+<header>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Eventos Prestige</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <a class="nav-link" id="offcanvasNavbarLabel" href="index.html">Eventos Prestige</a>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Gestión de Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" href="clientes.html">Gestión de Clientes</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="salones.html">Gestión de Salones</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+</header>
+</div>
+<main class="container my-4">
+    <div id="alertContainer"></div>
+    <div class="page-title">
+        <h2>Listado de Salones</h2>
+        <form id="buscarForm" class="row g-2 align-items-center">
+            <div class="col-auto"><input type="text" id="buscarId" class="form-control" placeholder="Buscar por ID"></div>
+            <div class="col-auto"><button type="submit" class="btn btn-prestige">Buscar</button></div>
+            <div class="col-auto"><button type="button" id="btnTodos" class="btn btn-outline-secondary">Ver todos</button></div>
+        </form>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr><th>#</th><th>Nombre del salón</th><th>Capacidad</th><th>Precio de renta</th><th>Ubicación</th></tr>
+        </thead>
+        <tbody id="salonesBody"></tbody>
+    </table>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script type="module" src="js/controllers/salonesController.js"></script>
+</body>
+</html>

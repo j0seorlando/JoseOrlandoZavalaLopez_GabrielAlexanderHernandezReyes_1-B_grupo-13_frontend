@@ -1,0 +1,46 @@
+.hola nav {
+background-color: #ffd5df;
+border-radius: 15px;
+padding: 10px;
+
+}
+
+
+.hola a {
+color: #000000;
+font-size: 25px;
+text-decoration: solid;
+}
+
+
+.hola1 h5 {
+font-size: 30px;
+border-radius: 10px;
+padding: 10px;
+background-color: #ffe3ea;
+color: #000;
+
+}
+
+.navbar-brand  {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffeef2;
+}
+
+.nose {
+    background-color: #000000;
+}
+
+.hola {
+background-color: #ffd5df;
+
+}
+
+/* ===== Añadidos ===== */
+body { background-color: #fff7f9; }
+.page-title { margin: 24px 0 12px; }
+.btn-prestige { background-color: #ffd5df; border-color: #ffd5df; color: #000; }
+.btn-prestige:hover { background-color: #ffbfce; border-color: #ffbfce; color: #000; }
+.table thead th { background-color: #ffe3ea; }
+#alertContainer { position: sticky; top: 8px; z-index: 1080; }

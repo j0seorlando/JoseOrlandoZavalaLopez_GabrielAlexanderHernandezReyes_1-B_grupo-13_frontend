@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Eventos | Eventos Prestige</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="hola">
+<header>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Eventos Prestige</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <a class="nav-link" id="offcanvasNavbarLabel" href="index.html">Eventos Prestige</a>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Gestión de Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" href="clientes.html">Gestión de Clientes</a></li>
+                <li class="nav-item"><a class="nav-link" href="salones.html">Gestión de Salones</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+</header>
+</div>
+<main class="container my-4">
+    <div id="alertContainer"></div>
+    <div class="d-flex justify-content-between align-items-center page-title">
+        <h2 class="mb-0">Historial de Eventos</h2>
+        <button id="btnNuevoEvento" class="btn btn-prestige">+ Nuevo evento</button>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr><th>#</th><th>Cliente</th><th>Salón</th><th>Evento</th><th>Fecha</th><th>Personas</th><th>Horas</th><th>Total a pagar</th><th>Estado</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="eventosBody"></tbody>
+    </table>
+    </div>
+
+    <div class="modal fade" id="eventoModal" tabindex="-1" aria-labelledby="eventoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <form class="modal-content" id="eventoForm" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title" id="eventoModalLabel">Nuevo evento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="eventoId">
+            <div class="mb-3"><label for="idCliente" class="form-label">Cliente *</label>
+                <select id="idCliente" class="form-select"></select>
+                <div class="invalid-feedback">Selecciona un cliente.</div></div>
+            <div class="mb-3"><label for="idSalon" class="form-label">Salón *</label>
+                <select id="idSalon" class="form-select"></select>
+                <div class="invalid-feedback">Selecciona un salón.</div>
+                <div class="form-text" id="capacidadHint"></div></div>
+            <div class="mb-3"><label for="nombreEvento" class="form-label">Nombre del evento *</label>
+                <input type="text" class="form-control" id="nombreEvento" maxlength="100">
+                <div class="invalid-feedback">El nombre del evento es obligatorio.</div></div>
+            <div class="mb-3"><label for="fechaEvento" class="form-label">Fecha del evento *</label>
+                <input type="date" class="form-control" id="fechaEvento">
+                <div class="invalid-feedback">Selecciona la fecha.</div></div>
+            <div class="row">
+              <div class="col-6 mb-3"><label for="cantidadPersonas" class="form-label">Cantidad de personas *</label>
+                <input type="number" min="1" step="1" class="form-control" id="cantidadPersonas">
+                <div class="invalid-feedback">Entero mayor a 0.</div></div>
+              <div class="col-6 mb-3"><label for="cantidadHoras" class="form-label">Cantidad de horas *</label>
+                <input type="number" min="1" step="1" class="form-control" id="cantidadHoras">
+                <div class="invalid-feedback">Entero mayor a 0.</div></div>
+            </div>
+            <div class="form-text">El total a pagar lo calcula el sistema automáticamente.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-prestige">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script type="module" src="js/controllers/indexController.js"></script>
+</body>
+</html>
